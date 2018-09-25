@@ -18,6 +18,16 @@ class Student
     self.new(name: name, grade: grade, id: id)
   end
 
+  def self.find_by_name(name)
+    sql = <<-SQL
+      SELECT * FROM students
+      WHERE students.name = ?;
+    SQL
+
+    row = DB[:conn].execute(sql, name)
+    self.new_from_db(row)
+  end
+
   def self.all
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
