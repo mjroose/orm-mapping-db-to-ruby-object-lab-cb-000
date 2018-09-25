@@ -22,6 +22,7 @@ class Student
     sql = "SELECT * FROM students WHERE students.name = ?;"
 
     row = DB[:conn].execute(sql, name)
+    binding.pry
     self.new_from_db(row)
   end
 
