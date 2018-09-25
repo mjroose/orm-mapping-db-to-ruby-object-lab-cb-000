@@ -2,9 +2,12 @@ class Student
   attr_accessor :id, :name, :grade
 
   def initialize(attributes = nil)
-    @name = attributes[:name]
-    @grade = attributes[:grade]
-    @id = attributes[:id]
+    if attributes != nil
+      @name = attributes[:name]
+      @grade = attributes[:grade]
+      @id = attributes[:id]
+    else
+      @name, @grade, @id = nil
   end
 
   def self.new_from_db(row)
