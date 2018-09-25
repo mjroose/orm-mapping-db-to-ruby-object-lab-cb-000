@@ -16,7 +16,6 @@ class Student
     name = row[1]
     grade = row[2]
     self.new(name: name, grade: grade, id: id)
-    binding.pry
   end
 
   def self.find_by_name(name)
