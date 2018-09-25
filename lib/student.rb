@@ -8,6 +8,7 @@ class Student
       @id = attributes[:id]
     else
       @name, @grade, @id = nil
+    end
   end
 
   def self.new_from_db(row)
