@@ -24,7 +24,7 @@ class Student
   end
 
   def self.find_by_name(name)
-    sql = "SELECT * FROM students WHERE students.name = ?;"
+    sql = "SELECT * FROM students WHERE students.name = ? LIMIT 1;"
 
     row = DB[:conn].execute(sql, name).flatten
     binding.pry
