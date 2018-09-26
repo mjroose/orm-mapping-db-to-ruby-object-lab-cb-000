@@ -78,7 +78,6 @@ describe Student do
         pat.name = "Pat"
         pat.grade = 12
         pat.save
-
         pat_from_db = Student.find_by_name("Pat")
         expect(pat_from_db.name).to eq("Pat")
         expect(pat_from_db).to be_an_instance_of(Student)
