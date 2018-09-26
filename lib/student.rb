@@ -19,11 +19,12 @@ class Student
   end
 
   def self.find_by_name(name)
-    sql = "SELECT * FROM students WHERE students.name = ?;"
-
-    row = DB[:conn].execute(sql, name)
-    raise row
-    self.new_from_db(row)
+    # sql = "SELECT * FROM students WHERE students.name = ?;"
+    #
+    # row = DB[:conn].execute(sql, name)
+    # raise row
+    # self.new_from_db(row)
+    "called"
   end
 
   def self.all
